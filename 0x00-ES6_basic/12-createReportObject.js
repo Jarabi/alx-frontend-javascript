@@ -7,7 +7,9 @@ export default function createReportObject(employeesList) {
   };
 
   for (const department in employeesList) {
-    allEmployeesReport.allEmployees[department] = employeesList[department];
+    if (department in employeesList) {
+      allEmployeesReport.allEmployees[department] = employeesList[department];
+    }
   }
 
   return allEmployeesReport;
