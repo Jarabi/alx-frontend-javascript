@@ -4,10 +4,11 @@ const createInt8TypedArray = (length, position, value) => {
   }
 
   const buffer = new ArrayBuffer(length);
-  const int8View = new Uint8Array(buffer);
+  const int8View = new DataView(buffer);
 
-  int8View[position] = value;
-  return buffer;
+  int8View.setInt8(position, value);
+
+  return int8View;
 };
 
 export default createInt8TypedArray;
