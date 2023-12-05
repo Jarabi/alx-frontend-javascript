@@ -1,14 +1,12 @@
 const cleanSet = (set, startString) => {
-  const startPoint = startString.length;
-  const stringSetArr = [];
-
-  if (startString === '') return startString;
+  const start = startString.length;
+  const stringArr = [];
 
   for (const value of set) {
-    if (value.startsWith(startString)) stringSetArr.push(value.slice(startPoint));
+    if (startString && value.startsWith(startString)) stringArr.push(value.slice(start));
   }
 
-  return stringSetArr.join('-');
+  return stringArr.join('-');
 };
 
 export default cleanSet;
