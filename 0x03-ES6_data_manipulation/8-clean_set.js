@@ -1,9 +1,10 @@
 const cleanSet = (set, startString) => {
-  const start = startString.length;
   const stringArr = [];
 
   for (const value of set) {
-    if (startString && value.startsWith(startString)) stringArr.push(value.slice(start));
+    if (startString && value.startsWith(startString)) {
+      stringArr.push(value.substring(startString.length));
+    }
   }
 
   return stringArr.join('-');
