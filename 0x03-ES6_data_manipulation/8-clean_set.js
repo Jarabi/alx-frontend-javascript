@@ -1,9 +1,11 @@
 const cleanSet = (set, startString) => {
   const stringArr = [];
 
-  for (const value of set) {
-    if (startString && value.startsWith(startString)) {
-      stringArr.push(value.substring(startString.length));
+  if (startString && startString.length > 0) {
+    for (const el of set) {
+      if (typeof el === 'string' && el.startsWith(startString)) {
+        stringArr.push(el.substring(startString.length));
+      }
     }
   }
 
