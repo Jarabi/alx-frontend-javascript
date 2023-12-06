@@ -19,4 +19,10 @@ const d1: Directors = {
     numberOfReports: 17,
 };
 
-console.log(d1)
+type printTeacherFunction = (firstName: string, lastName: string) => void
+
+const printTeacher: printTeacherFunction = (firstName:string, lastName:string) => {
+    console.log(`${firstName.substring(0, 1)}. ${lastName}`);
+}
+
+printTeacher('John', 'Doe')
