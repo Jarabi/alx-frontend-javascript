@@ -25,4 +25,32 @@ const printTeacher: printTeacherFunction = (firstName:string, lastName:string) =
     console.log(`${firstName.substring(0, 1)}. ${lastName}`);
 }
 
-printTeacher('John', 'Doe')
+// printTeacher('John', 'Doe')
+
+interface StudentInterface {
+    workOnHomework(): string;
+    displayName(): string;
+}
+
+interface StudentConstructor {
+    firstName: string;
+    lastName: string;
+}
+
+class StudentClass implements StudentInterface {
+    firstName: string;
+    lastName: string;
+
+    constructor({firstName, lastName}: StudentConstructor) {
+        this.firstName = firstName
+        this.lastName = lastName
+    }
+
+    workOnHomework(): string {
+        return 'Currently working'
+    }
+
+    displayName (): string {
+        return this.firstName
+    }
+}
